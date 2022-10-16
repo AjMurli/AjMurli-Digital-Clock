@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo&family=Bree+Serif&family=Clicker+Script&family=Courgette&family=Libre+Baskerville:wght@700&family=Orelega+One&family=PT+Serif:ital,wght@1,700&family=Pacifico&family=Roboto+Slab:wght@600&family=Signika+Negative:wght@300&family=Yantramanav&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/48a00b8081.js" crossorigin="anonymous"></script>
+    <link href="//db.onlinewebfonts.com/c/58045dabdc3a361cb9bb9faf2f1dd1f3?family=Digital-7" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="/clock.css">
+    <link rel="icon" href="1gif.gif">
+
+    <style>
+        * {
+            font-family: 'Roboto Slab';
+            /* font-family: 'orbitron'; */
+
+            color: white;
+            padding: 0;
+            margin: 0;
+            background: #131419;
+
+        }
+
+        @import url(//db.onlinewebfonts.com/c/58045dabdc3a361cb9bb9faf2f1dd1f3?family=Digital-7);
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .rectangle {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 50vw;
+            padding: 0 2vw;
+            margin: 2vw 2vw 0vw 2vw;
+            border-radius: .2vw;
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.05),
+                3px 3px 5px rgba(0, 0, 0, 0.5);
+            background: #131419;
+            animation: borderChange 10s infinite alternate;
+        }
+
+        @keyframes borderChange {
+            0% {
+                border: 3px solid rgb(0, 26, 255);
+
+            }
+
+            20% {
+                border: 3px solid rgb(0, 242, 255);
+
+            }
+
+            40% {
+                border: 3px solid aqua;
+            }
+
+            60% {
+                border: 3px solid rgb(9, 255, 0);
+            }
+
+            80% {
+                border: 3px solid rgb(248, 30, 219);
+            }
+
+            90% {
+                border: 3px solid rgb(248, 37, 30);
+
+            }
+
+            100% {
+                border: 3px solid rgb(80, 7, 237);
+            }
+
+        }
+
+        .h1 {
+            margin: 2vw 0 2vw 0;
+            text-align: center;
+            font-size: 4vw;
+            transition: all 5s ease;
+        }
+
+        .h1:hover {
+            border-bottom: 3px solid rgb(0, 255, 255);
+        }
+
+        .rectangle #indiaTime {
+            font-size: 8vw;
+        }
+
+        #indiaTime {
+            font-family: 'digital-7';
+        }
+
+        #btn {
+            line-height: 2vw;
+            margin: 2vw 0;
+            border: 0.1rem solid aqua;
+            padding: .3rem .5rem;
+            cursor: pointer;
+            transition: all .5s ease;
+            font-size: 1vw;
+            animation: borderChange 10s infinite alternate;
+
+        }
+
+        #btn:hover {
+            background-color: aqua;
+            color: black;
+            border: 0.1rem solid white;
+        }
+
+
+        .rectangle2 {
+            z-index: 11;
+            display: flex;
+            padding: 1vw;
+            margin: 0 1vw 1vw 1vw;
+            border: 2px solid black;
+            margin-top: 2vw;
+            border-radius: 0.4rem;
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.05),
+                3px 3px 5px rgba(0, 0, 0, 0.5);
+            background: #131419;
+            text-align: left;
+        }
+
+        .dd {
+            margin: 1vw;
+            padding: 1vw;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: all .5s ease;
+            user-select: none;
+        }
+
+        .dd:hover {
+            border: 4px solid rgb(9, 235, 247);
+        }
+
+        .t {
+            line-height: 3vw;
+            font-size: 1vw;
+        }
+
+        .country {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .country #name1,
+        #name2,
+        #name3,
+        #name4 {
+            color: aqua;
+            font-size: 1.6vw;
+            text-transform: uppercase;
+        }
+
+
+        .footer {
+            bottom: 1%;
+            position: absolute;
+            padding: 1vw;
+            height: 7vh;
+            margin: 0 1vw;
+            border: 2px solid black;
+            margin-top: 1vw;
+            border-radius: .4vw;
+            box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.05),
+                3px 3px 5px rgba(0, 0, 0, 0.5);
+            background: #131419;
+        }
+
+        footer img {
+            width: 3rem;
+            cursor: pointer;
+            object-fit: cover;
+            border-radius: 100%;
+            height: 6.2vh;
+            transition: all 1s ease;
+        }
+
+        footer img:hover {
+            width: 4rem;
+            height: 8vh;
+        }
+
+
+        .imgName {
+
+            display: flex;
+            text-align: center;
+            align-items: center;
+            width: 96vw;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+        }
+
+        .tagShare {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .name {
+            font-size: 1.8vw;
+            animation: colorChange 10s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: rgb(255, 0, 247);
+            }
+
+            20% {
+                color: rgb(255, 0, 76);
+            }
+
+            40% {
+                color: rgb(17, 255, 0);
+            }
+
+            60% {
+                color: rgb(8, 206, 251);
+            }
+
+            80% {
+                color: rgb(6, 250, 87);
+
+            }
+
+            90% {
+                color: rgb(30, 248, 248);
+            }
+
+            100% {
+                color: rgb(255, 255, 0);
+            }
+        }
+
+        .tag {
+            font-size: 1.8vw;
+        }
+
+        .share .fa-brands {
+            font-size: 2vw;
+            margin: .5vw;
+            transition: all .5s ease;
+            cursor: pointer;
+        }
+
+        .share .fa-brands:hover {
+            color: rgb(27, 250, 250);
+        }
+
+        footer .i {
+            display: flex;
+            align-items: center;
+            gap: 0 1vw;
+            width: 15%;
+        }
+
+
+        footer .i p {
+            font-size: 1.8vw;
+        }
+
+        .dateTime {
+            user-select: none;
+        }
+
+        .tagShare .tag .T {
+            animation: borderLength 1s infinite alternate;
+        }
+
+        @keyframes borderLength {
+            from {
+                width: 0%;
+                border-bottom: 2px solid blue;
+            }
+
+            to {
+                width: 100%;
+                border-bottom: 2px solid rgb(0, 255, 213);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <section id="main">
+        <div class="h1">DIGITAL CLOCK
+            <div class="T"></div>
+
+        </div>
+
+        <div class="container">
+            <div class="rectangle">
+
+                <div class="dateTime" id="indiaTime"></div>
+
+                <div class="dateTime" id="indiaDate"></div>
+
+                <div class="otherCountries">
+                    <button type="button" onclick="Country()" id="btn">Other Country Time</button>
+                </div>
+
+            </div>
+
+            <div class="rectangle2">
+                <div class="country">
+
+                    <div class="dd">
+                        <div id="name1"></div>
+                        <div id="newyorkTime" class="t">
+                        </div>
+
+                    </div>
+
+                    <div class="dd">
+                        <div id="name2"></div>
+                        <div id="londonTime" class="t">
+                        </div>
+                    </div>
+
+                    <div class="dd">
+                        <div id="name3"></div>
+                        <div id="australiaTime" class="t">
+                        </div>
+                    </div>
+                    <div class="dd">
+                        <div id="name4"></div>
+                        <div id="africaTime" class="t">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="footer">
+
+            <div class="imgName">
+                <div class="i">
+                    <img src="Murli.png" alt="Murli">
+                    <p class="name">Murli🔰</p>
+                </div>
+
+
+                <div class="tagShare">
+                    <div class="tag">Copyright &#169; 2022 Murli.com
+                        <div class="T"></div>
+                    </div>
+                </div>
+
+
+                <div class="share">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        // INDIA TIME
+        getIndiaTime = () => {
+            let a, date, time;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            let hrs = a.getHours();
+            let minuts = a.getMinutes();
+            let secnds = a.getSeconds();
+            let day = "";
+            if (hrs <= 12) {
+                day = "AM";
+            }
+            if (minuts < 10) {
+                minuts = '0' + minuts;
+            }
+            if (secnds < 10) {
+                secnds = '0' + secnds;
+            }
+            if (hrs >= 12) {
+                day = "PM";
+            }
+            if (hrs < 10) {
+                hrs = '0' + hrs;
+            }
+            time = hrs + ':' + minuts + ':' + secnds + ' ' + day;
+            document.getElementById('indiaTime').innerHTML = time;
+            document.getElementById('indiaDate').innerHTML = date;
+
+        }
+        getIndiaTime();
+        setInterval(getIndiaTime, 1000);
+
+        // document.getElementById("indiaDate").style.color="cyan";
+
+        Country = () => {
+            // NEWYORK TIME
+            getnewyorkTime = () => {
+                let a, date, time;
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                a = new Date();
+                date = a.toLocaleDateString(undefined, options);
+                document.getElementById("name1").innerHTML = "America  New York  ";
+                document.getElementById("newyorkTime").innerHTML = a.toLocaleString("en-US", { timeZone: 'America/New_york', timeStyle: 'medium', hourCycle: "h24" }) + " on " + date;
+            }
+            getnewyorkTime();
+            setInterval(getnewyorkTime, 1000);
+
+
+            // LONDON TIME
+            getLondonTime = () => {
+                let a, date, time;
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                a = new Date();
+                date = a.toLocaleDateString(undefined, options);
+                document.getElementById("name2").innerHTML = "Europe London ";
+                document.getElementById("londonTime").innerHTML = new Date().toLocaleString("en-US", { timeZone: 'Europe/London', timeStyle: 'medium', hourCycle: "h24" }) + " on " + date;
+            }
+            getLondonTime();
+            setInterval(getLondonTime, 1000);
+
+
+            // AUSTRALIA TIME
+            getAustraliaTime = () => {
+                let a, date, time;
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                a = new Date();
+                date = a.toLocaleDateString(undefined, options);
+                document.getElementById("name3").innerHTML = "Australia Sydney ";
+                document.getElementById("australiaTime").innerHTML = a.toLocaleString("en-US", { timeZone: 'Australia/Sydney', timeStyle: 'medium', hourCycle: "h24" }) + " on " + date;
+            }
+            getAustraliaTime();
+            setInterval(getAustraliaTime, 1000);
+
+            // AFRICA TIME
+            getAfricaTime = () => {
+                let a, date, time;
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                a = new Date();
+                date = a.toLocaleDateString(undefined, options);
+                document.getElementById("name4").innerHTML = "Africa Accra ";
+                document.getElementById("africaTime").innerHTML = a.toLocaleString("en-NZ", { timeZone: 'Africa/Accra', timeStyle: 'medium', hourCycle: "h24" }) + " on " + date;
+            }
+            getAfricaTime();
+            setInterval(getAfricaTime, 1000);
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+<!--  font-size: 60px;
+  color: cyan; -->
