@@ -14,13 +14,10 @@
     <script src="https://kit.fontawesome.com/48a00b8081.js" crossorigin="anonymous"></script>
     <link href="//db.onlinewebfonts.com/c/58045dabdc3a361cb9bb9faf2f1dd1f3?family=Digital-7" rel="stylesheet"
         type="text/css" />
-    <link rel="stylesheet" href="/clock.css">
     <link rel="icon" href="1gif.gif">
-
     <style>
         * {
-            font-family: 'Roboto Slab';
-            /* font-family: 'orbitron'; */
+            font-family: 'orbitron';
 
             color: white;
             padding: 0;
@@ -28,6 +25,7 @@
             background: #131419;
 
         }
+
 
         @import url(//db.onlinewebfonts.com/c/58045dabdc3a361cb9bb9faf2f1dd1f3?family=Digital-7);
 
@@ -38,6 +36,7 @@
             flex-direction: column;
             text-align: center;
         }
+
 
         .rectangle {
             display: flex;
@@ -51,38 +50,39 @@
                 3px 3px 5px rgba(0, 0, 0, 0.5);
             background: #131419;
             animation: borderChange 10s infinite alternate;
+
         }
 
         @keyframes borderChange {
             0% {
-                border: 3px solid rgb(0, 26, 255);
+                border: .2rem solid rgb(0, 26, 255);
 
             }
 
             20% {
-                border: 3px solid rgb(0, 242, 255);
+                border: .2rem solid rgb(0, 242, 255);
 
             }
 
             40% {
-                border: 3px solid aqua;
+                border: .2rem solid aqua;
             }
 
             60% {
-                border: 3px solid rgb(9, 255, 0);
+                border: .2rem solid rgb(9, 255, 0);
             }
 
             80% {
-                border: 3px solid rgb(248, 30, 219);
+                border: .2rem solid rgb(248, 30, 219);
             }
 
             90% {
-                border: 3px solid rgb(248, 37, 30);
+                border: .2rem solid rgb(248, 37, 30);
 
             }
 
             100% {
-                border: 3px solid rgb(80, 7, 237);
+                border: .2rem solid rgb(80, 7, 237);
             }
 
         }
@@ -91,34 +91,33 @@
             margin: 2vw 0 2vw 0;
             text-align: center;
             font-size: 4vw;
-            transition: all 5s ease;
         }
 
-        .h1:hover {
-            border-bottom: 3px solid rgb(0, 255, 255);
-        }
 
         .rectangle #indiaTime {
             font-size: 8vw;
         }
 
         #indiaTime {
-            font-family: 'digital-7';
+            font-family: 'digital-7', 'orbitron';
         }
 
         #btn {
+            border: none;
+        }
+
+        .btn {
             line-height: 2vw;
             margin: 2vw 0;
             border: 0.1rem solid aqua;
-            padding: .3rem .5rem;
+            padding: .5rem .5rem;
             cursor: pointer;
             transition: all .5s ease;
-            font-size: 1vw;
+            font-size: 1rem;
             animation: borderChange 10s infinite alternate;
-
         }
 
-        #btn:hover {
+        .btn:hover {
             background-color: aqua;
             color: black;
             border: 0.1rem solid white;
@@ -147,6 +146,8 @@
             text-align: center;
             transition: all .5s ease;
             user-select: none;
+            border-top-left-radius: 0.8rem;
+            border-bottom-right-radius: 0.8rem;
         }
 
         .dd:hover {
@@ -179,7 +180,6 @@
             bottom: 1%;
             position: absolute;
             padding: 1vw;
-            height: 7vh;
             margin: 0 1vw;
             border: 2px solid black;
             margin-top: 1vw;
@@ -190,7 +190,7 @@
         }
 
         footer img {
-            width: 3rem;
+            width: 100%;
             cursor: pointer;
             object-fit: cover;
             border-radius: 100%;
@@ -212,7 +212,6 @@
             width: 96vw;
             justify-content: space-between;
             flex-wrap: wrap;
-
         }
 
         .tagShare {
@@ -258,25 +257,28 @@
         }
 
         .tag {
-            font-size: 1.8vw;
+            font-size: 1.5rem;
         }
 
         .share .fa-brands {
-            font-size: 2vw;
+            font-size: 1.5rem;
             margin: .5vw;
             transition: all .5s ease;
             cursor: pointer;
+
         }
 
         .share .fa-brands:hover {
             color: rgb(27, 250, 250);
+
         }
+
 
         footer .i {
             display: flex;
             align-items: center;
             gap: 0 1vw;
-            width: 15%;
+            text-align: left;
         }
 
 
@@ -303,6 +305,82 @@
                 border-bottom: 2px solid rgb(0, 255, 213);
             }
         }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #btn p {
+                padding: .6rem .6rem;
+                font-size: 12px;
+            }
+
+            .rectangle {
+                width: 80vw;
+                padding: 1rem;
+            }
+
+            .imgName {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .imgName .name {
+                font-size: 1.5rem;
+                animation: colorChange 10s infinite alternate;
+            }
+
+            .share .fa-brands {
+                font-size: 1.5rem;
+                gap: .5rem;
+            }
+
+            .tagShare .tag {
+                font-size: 1rem;
+            }
+
+        }
+
+        @media only screen and (max-width: 900px) {
+            .rectangle {
+                width: 80vw;
+            }
+
+            #btn p {
+                padding: .6rem .6rem;
+                font-size: 12px;
+            }
+        }
+
+        .share i {
+            transition: all 1s ease;
+        }
+
+        .share i:hover {
+            font-size: 1.8rem;
+        }
+
+        footer {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media only screen and (min-width: 200px) and (max-width:4000px) {
+            footer img {
+                width: 55px;
+                height: 50px;
+            }
+        }
     </style>
 </head>
 
@@ -310,12 +388,8 @@
 <body>
 
     <section id="main">
-        <div class="h1">DIGITAL CLOCK
-            <div class="T"></div>
-
-        </div>
-
         <div class="container">
+            <div class="h1">DIGITAL CLOCK</div>
             <div class="rectangle">
 
                 <div class="dateTime" id="indiaTime"></div>
@@ -323,7 +397,9 @@
                 <div class="dateTime" id="indiaDate"></div>
 
                 <div class="otherCountries">
-                    <button type="button" onclick="Country()" id="btn">Other Country Time</button>
+                    <button type="button" onclick="Country()" id="btn">
+                        <p class="btn">Other Country Time</p>
+                    </button>
                 </div>
 
             </div>
